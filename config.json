@@ -1,0 +1,60 @@
+{
+	"vid": {
+		"url": "https://www.vid.de/der-verband/mitglieder/",
+		"selectors": {
+			"items": "li",
+			"fields": {
+				"name": { "selector": ".teamMitgliedText h2" },
+				"role": { "selector": ".teamFunktion" },
+				"city": {
+					"selector": ".teamMitgliedText p:nth-of-type(2)",
+					"replace": ["Stadt: ", ""]
+				},
+				"firm": {
+					"selector": ".teamMitgliedBild .mitgliederKontaktDaten strong"
+				},
+				"address": {
+					"selector": ".teamMitgliedBild .mitgliederKontaktDaten:nth-of-type(2)"
+				},
+				"postalCodeCity": {
+					"selector": ".teamMitgliedBild .mitgliederKontaktDaten:nth-of-type(3)"
+				},
+				"phone": {
+					"selector": ".teamMitgliedBild .mitgliederKontaktDaten:nth-of-type(4)",
+					"replace": ["Tel.", ""]
+				},
+				"fax": {
+					"selector": ".teamMitgliedBild .mitgliederKontaktDaten:nth-of-type(5)",
+					"replace": ["Fax", ""]
+				},
+				"email": {
+					"selector": ".teamMitgliedBild .mitgliederKontaktDaten a[href^='mailto:']"
+				},
+				"website": {
+					"selector": ".teamMitgliedBild .kanzleiWebsiteLink",
+					"attr": "href"
+				}
+			}
+		}
+	},
+
+	"asghdealmaking": {
+		"project": {
+			"url": "https://www.asghdealmaking.com/components/39785",
+			"selectors": {
+				"items": "article.Card-sc-1of7o8d-0",
+				"fields": {
+					"title": { "selector": ".RouterLink-sc-1ih28v0-0.fpXeQA" },
+					"description": {
+						"selector": ".Span__StyledSpan-sc-1u9gj5m-0.lnVQsf"
+					},
+					"tags": { "selector": ".TagList__StyledTag-sc-9gch7t-2.fEiuLf" },
+					"author": { "selector": ".Span__StyledSpan-sc-1u9gj5m-0.iuSkGy" },
+					"location": {
+						"selector": ".Span__StyledSpan-sc-1u9gj5m-0.hGLkXm span:nth-of-type(2)"
+					}
+				}
+			}
+		}
+	}
+}
